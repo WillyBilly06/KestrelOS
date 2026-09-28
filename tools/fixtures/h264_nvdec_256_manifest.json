@@ -1,0 +1,163 @@
+{
+  "kind": "Exact Windows NVDEC decoded oracle; NOT native Kestrel proof",
+  "created_utc": "2026-09-09T09:23:38.202140+00:00",
+  "source": "D:\\Linux_ESP32S31\\out\\nvenc-reference-256\\20260909-090552\\frame.h264",
+  "source_sha256": "efc9304e30db3db7923ec26a5c9ffd0487c565af4b23cab3e32f11e01dae46da",
+  "decoded_sha256": "a782dd43fd91132e04632663728bcb984928d6f9c50507b5121faf1f78d12b3e",
+  "plane_sha256": {
+    "Y": "523831dd2b2c30456464133af2280ad24ce7f1fdad529dfa8d6fc4847866a39c",
+    "UV": "32ce92bf22547a0a31056fba3964d1b94e235bed2885bd812c3ef572f42b0c64"
+  },
+  "hardware": {
+    "device": "NVIDIA GeForce RTX 5070 Ti",
+    "compute_major": 12,
+    "compute_minor": 0,
+    "cuda_driver_version": 13030,
+    "coded_width": 256,
+    "coded_height": 256,
+    "mapped_pitch": 512,
+    "output_pitch": 256,
+    "output_bytes": 98304,
+    "decode_surfaces": 17,
+    "nvdec_engines": 1,
+    "decode_status": 2,
+    "sequences": 1,
+    "pictures": 1,
+    "displays": 1,
+    "api_calls": [
+      {
+        "call": "cuInit(0)",
+        "status": 0
+      },
+      {
+        "call": "cuDeviceGet(&device,0)",
+        "status": 0
+      },
+      {
+        "call": "cuDeviceGetAttribute(&major,CU_DEVICE_ATTRIBUTE_COMPUTE_CAPABILITY_MAJOR,device)",
+        "status": 0
+      },
+      {
+        "call": "cuDeviceGetAttribute(&minor,CU_DEVICE_ATTRIBUTE_COMPUTE_CAPABILITY_MINOR,device)",
+        "status": 0
+      },
+      {
+        "call": "cuDriverGetVersion(&driver)",
+        "status": 0
+      },
+      {
+        "call": "cuDeviceGetName(name,sizeof name,device)",
+        "status": 0
+      },
+      {
+        "call": "cuDevicePrimaryCtxRetain(&context,device)",
+        "status": 0
+      },
+      {
+        "call": "cuCtxSetCurrent(context)",
+        "status": 0
+      },
+      {
+        "call": "cuvidCreateVideoParser(&parser,&params)",
+        "status": 0
+      },
+      {
+        "call": "cuvidParseVideoData(parser,&packet)",
+        "status": 0
+      },
+      {
+        "call": "cuvidGetDecoderCaps(&d.caps)",
+        "status": 0
+      },
+      {
+        "call": "cuvidCreateDecoder(&d.decoder,&config)",
+        "status": 0
+      },
+      {
+        "call": "cuvidDecodePicture(d.decoder,pic)",
+        "status": 0
+      },
+      {
+        "call": "cuvidMapVideoFrame64(d.decoder,info->picture_index,&device,&d.pitch,&proc)",
+        "status": 0
+      },
+      {
+        "call": "cuvidGetDecodeStatus(d.decoder,info->picture_index,&status)",
+        "status": 0
+      },
+      {
+        "call": "cuMemcpy2D(&y)",
+        "status": 0
+      },
+      {
+        "call": "cuMemcpy2D(&uv)",
+        "status": 0
+      },
+      {
+        "call": "cuCtxSynchronize()",
+        "status": 0
+      },
+      {
+        "call": "cuvidUnmapVideoFrame64(d.decoder,device)",
+        "status": 0
+      },
+      {
+        "call": "cuvidParseVideoData(parser,&eos)",
+        "status": 0
+      },
+      {
+        "call": "cuvidDestroyVideoParser(parser)",
+        "status": 0
+      },
+      {
+        "call": "cuvidDestroyDecoder(decoded.decoder)",
+        "status": 0
+      },
+      {
+        "call": "cuCtxSetCurrent(nullptr)",
+        "status": 0
+      },
+      {
+        "call": "cuDevicePrimaryCtxRelease(device)",
+        "status": 0
+      }
+    ]
+  },
+  "configuration": {
+    "codec": "H264",
+    "format": "NV12",
+    "bit_depth": 8,
+    "creation_flags": "cudaVideoCreate_PreferCUVID=4",
+    "deinterlace": "Weave (progressive)",
+    "crop": [
+      0,
+      0,
+      256,
+      256
+    ],
+    "target": [
+      0,
+      0,
+      256,
+      256
+    ],
+    "scaling": false,
+    "intra_only": true,
+    "output_surfaces": 1,
+    "parser_error_threshold": 0
+  },
+  "header_sha256": {
+    "dynlink_cuviddec.h": "1244165ea5521d4be865995eb1c49b8910f755d0ca35004e1c4010ef7f612143",
+    "dynlink_nvcuvid.h": "2141dade75f3178520092dce2c02df9b47c4b19036b56bb9316bd83a07bf16f1"
+  },
+  "tool_sha256": {
+    "decode_nvdec_reference.py": "29c757853691faf3f5049039dbd299f34f86b24bb90198d3b7be1eccb90d81c1",
+    "decode_nvdec_reference.cu": "d8ca8908697797463fef0a87a54dbe545281c97de32f7fd2c63234e31d53ee8c"
+  },
+  "runtime_sha256": "6014e9cbd0980fd55140056af52574142463431c9b1e232f14e7c929f7313686",
+  "lossy_source_comparison": {
+    "different_bytes": 39054,
+    "max_absolute_difference": 5,
+    "mean_absolute_difference": 0.4174906412760417
+  }
+}

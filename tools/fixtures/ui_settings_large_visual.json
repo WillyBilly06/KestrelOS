@@ -1,0 +1,14 @@
+[
+  {"click": [120, 1550]},
+  {"click": [120, 1224]},
+  {"key": "ctrl-pgdn"},
+  {"key": "ctrl-pgdn"},
+  {"key": "ctrl-pgdn"},
+  {"key": "end"},
+  {"click": [1160, 1090]},
+  {"key": "home"},
+  {"key": "end"},
+  {"key": "ctrl-pgdn"},
+  {"key": "ctrl-pgdn"},
+  {"key": "ctrl-pgdn"}
+]

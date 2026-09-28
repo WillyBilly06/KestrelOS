@@ -1,0 +1,20 @@
+# The programs this system knows how to fetch.
+#
+#   name | kind | file | address | one line about it
+#
+# `kind` is `native` for a program built for this system and `windows` for one
+# built for Windows, which runs under the translation layer.
+#
+# Two things decide whether an entry will work, and both are checked before
+# anything is kept on the disk:
+#
+#   - it has to be one file. A program that arrives as an installer, an
+#     archive, or a set of pieces has nothing here to unpack it.
+#   - a Windows program has to be built for x86-64. A 32-bit one is a
+#     different instruction set, not an older version of the same thing, and
+#     this system will say so rather than install it.
+#
+# Anything not listed here can still be fetched by giving its address
+# directly, which is the general case; this list is only the short cut.
+
+7-Zip | windows | 7zr.exe | https://www.7-zip.org/a/7zr.exe | A standalone archive extractor. Published as a 32-bit program, so it downloads and is then refused - which is what that refusal looks like.
